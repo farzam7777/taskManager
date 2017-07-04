@@ -1,3 +1,24 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field{
+  padding: 9px;
+  border-radius: 3px;
+  margin-left: 6%;
+}
+
+.text-area{
+  margin-top: 2%;
+  margin-left: 3%;
+}
+
+.submit-btn{
+  margin-left: 8.5%;
+  margin-top: 3%;
+  background-color: black;
+  color: wheat;
+  border-radius: 5px;
+  padding-right: 22px;
+  padding-left: 22px;
+}

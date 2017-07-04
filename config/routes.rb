@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'tasks/index'
+  
+  root 'tasks#index'
 
-  get 'tasks/new'
-
-  get 'tasks/edit'
-
-  get 'tasks/show'
+  resources :tasks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

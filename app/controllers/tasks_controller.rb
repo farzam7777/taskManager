@@ -3,6 +3,19 @@ class TasksController < ApplicationController
   end
 
   def new
+    @task = Task.new
+  end
+
+  def create
+    @task = Task.new
+    @task = Task.create(task_params)
+
+    if @task.save
+      redirect_to new_task_path, :notice => "Your Task is successfully created"
+    else
+      render new
+    end
+      
   end
 
   def edit
@@ -10,4 +23,8 @@ class TasksController < ApplicationController
 
   def show
   end
+
+  def task_params
+    params.require(:task).permit!
+   end 
 end
