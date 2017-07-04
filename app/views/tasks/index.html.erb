@@ -1,2 +1,11 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>All Tasks</h1>
+
+<div class="form-margin">
+  <% @tasks.each do |task| %>
+    <h2><%= task.title %></span></h2>
+    <%= task.description %>
+    <hr>    
+  <% end %>  
+</div>
+
+<%= link_to "Create a new Task", new_task_path, :class => "field submit-btn link-text" %>
