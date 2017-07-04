@@ -1,2 +1,9 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1>Task Information</h1><hr>
+
+<h3 class="title-font"> <%= @task.title.capitalize %> </h3>
+<p> <%= @task.description %> </p>
+
+<p>
+  <%= link_to "Edit", edit_task_path, :class => "link-text" %> | 
+  <%= link_to 'Delete', @task,  method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

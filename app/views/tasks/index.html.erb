@@ -2,8 +2,13 @@
 
 <div class="form-margin">
   <% @tasks.each do |task| %>
-    <h2><%= task.title %></span></h2>
-    <%= task.description %>
+    
+    <h2> 
+      <%= link_to task.title.capitalize, task_path(task), :class => "link-text"%></span> 
+    </h2>
+    
+    <p> <%= task.description %> </p>
+    
     <hr>    
   <% end %>  
 </div>
