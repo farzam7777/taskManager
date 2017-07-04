@@ -2,6 +2,7 @@
 
 <h3 class="title-font"> <%= @task.title.capitalize %> </h3>
 <p> <%= @task.description %> </p>
+<p> Created at: <%= time_ago_in_words(@task.created_at) %> ago</p>
 
 <p>
   <%= link_to "Edit", edit_task_path, :class => "link-text" %> | 
