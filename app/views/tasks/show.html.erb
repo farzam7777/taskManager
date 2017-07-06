@@ -9,6 +9,9 @@
   <%= link_to 'Delete', @task,  method: :delete, data: { confirm: 'Are you sure?' }, :class => "link-text" %>
 </p>
 
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
+
 <p>
   <%= link_to "All Tasks", tasks_path, :class => "link-text" %>
 </p>

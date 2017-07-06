@@ -1,0 +1,13 @@
+<section class="comments">
+  <h3>Comments</h3>
+  <% @comments.each do |comment| %>
+    <span class="comment-style">
+
+    <%= comment.content %> 
+    <%= link_to "Edit", edit_task_comment_path(@task, comment),class: "link-text" %> |  
+    <%= link_to 'Delete', [@task, comment], method: :delete, data: { confirm: 'Are you sure?' }, :class => "link-text" %>
+      
+    </span>
+    <hr class="comment-hr">
+  <% end %>        
+</section>

@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
   
-  root 'tasks#index'
+  get 'comments/index'
 
-  resources :tasks
+  get 'comments/new'
+
+  get 'comments/edit'
+
+  get 'comments/show'
+
+    root 'tasks#index'
+
+  resources :tasks do
+    resources :comments
+  end  
+        
+  #get '/tasks/:id', to: 'tasks#show', as: 'my_task'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

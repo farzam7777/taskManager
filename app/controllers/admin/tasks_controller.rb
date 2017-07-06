@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class Admin::TasksController < ApplicationController
   def index
     @tasks = Task.all 
   end
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     @task = Task.create(task_params)
 
     if @task.save
-      redirect_to tasks_path, :notice => "Your Task is successfully created. "
+      redirect_to admin_tasks_path, :notice => "Your Task is successfully created. "
     else
       render new
     end
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to task_path, :notice => "Your task is successfully Updated. "
+      redirect_to admin_task_path, :notice => "Your task is successfully Updated. "
     else
       render edit
     end    
@@ -34,8 +34,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @comments = @task.comments
-    @comment = Comment.new
   end
 
   def completed
@@ -44,9 +42,9 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     if @task.destroy
-      redirect_to tasks_path, :notice => "Your task is successfully Deleted. "
+      redirect_to admin_tasks_path, :notice => "Your task is successfully Deleted. "
     else
-      redirect_to tasks_path, :notice => "Your task is not successfully Deleted. "
+      redirect_to admin_tasks_path, :notice => "Your task is not successfully Deleted. "
      end 
   end  
 
